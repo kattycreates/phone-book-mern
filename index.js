@@ -96,14 +96,14 @@ app.listen(PORT,()=>console.log("running..."));
 
 //mongo db connection
 
-/*const personName=process.argv[3];
-const personNumber=process.argv[4];*/
+const personName=process.argv[3];
+const personNumber=process.argv[4];
 
 
-/*
+
 const person=new Person({name:personName,number:personNumber});
 person.save().then(res=>{
     console.log("contact saved!");
-    mongoose.connection.close();
-});*/
+    //mongoose.connection.close();
+});
 
