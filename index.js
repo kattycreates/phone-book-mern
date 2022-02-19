@@ -49,7 +49,8 @@ app.post('/people',(req,res)=>{
     let body=req.body;
     if(body.name&&body.number)
     {
-        let people=Person.find({}).then(res=>res);
+        /*let people=Person.find({}).then(res=>res);
+        console.log(people);
 let name=people.find(person=>person.name===body.name);
 let number=people.find(person=>person.number===body.number);
 if(name&&number)
@@ -62,8 +63,8 @@ else if(name){
 else if(number)
 {
     res.json({error:"enter unique number"});
-}
-else{
+}*/
+//else{
     //body["id"]=Math.floor(Math.random()*999);
     //people.push(body);
     const person= new Person({
@@ -71,7 +72,7 @@ else{
         number:body.number
     });
     person.save().then(person=>res.json(person));
-    }
+    //}
 }
     else{
         res.json({error:"Enter both name and number!"});
@@ -96,7 +97,7 @@ app.listen(PORT,()=>console.log("running..."));
 
 //mongo db connection
 
-const personName=process.argv[3];
+/*const personName=process.argv[3];
 const personNumber=process.argv[4];
 
 
@@ -105,5 +106,5 @@ const person=new Person({name:personName,number:personNumber});
 person.save().then(res=>{
     console.log("contact saved!");
     //mongoose.connection.close();
-});
+});*/
 
