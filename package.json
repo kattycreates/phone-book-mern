@@ -7,7 +7,7 @@
     "start": "node index.js",
     "dev": "nodemon index.js",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "react-scripts build",
+    "build": "npm start",
     "build:ui": "rm -rf build && cd C:/Users/Maniselva/Desktop/MERN/Full stack tasks and practice/react/axios-testing && npm run build && cp -r build C:/Users/Maniselva/Desktop/MERN/Full stack tasks and practice/express/phone-book-backend",
     "deploy": "git push heroku main",
     "deploy:full": "npm run build:ui && git add . && git commit -m uibuild && git push && npm run deploy",
