@@ -1,7 +1,7 @@
 const mongoose=require('mongoose');
 const password=process.argv[2];
-const url=`mongodb+srv://katty:${password}@phonebook.ug4r3.mongodb.net/Testing-phonebook?retryWrites=true&w=majority`;
-mongoose.connect(url);
+
+mongoose.connect(process.env.MONGO_URL);
 
 const phoneSchema=new mongoose.Schema({name:String,number:Number});
 phoneSchema.set('toJSON',{

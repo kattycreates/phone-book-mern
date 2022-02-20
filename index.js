@@ -40,7 +40,8 @@ app.get('/people/:id',(req,res)=>{
     let id=req.params.id;
     //let data=people.filter(person=>person.id===Number(id));
     //data.length!==0?res.json(data):res.status(404).send("<h1 style='backround-color:red'>Data not found</h1>");
-    Person.findById(id).then(person=>res.json(person));
+    Person.findById(id).then(person=>{if(person)
+        res.json(person);else{res.status(404).end()}}).catch(error=>{console.log(error);res.status(500).send({error:error})});
 })
 
 app.post('/people',(req,res)=>{
